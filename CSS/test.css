@@ -15,7 +15,7 @@
 
 .login-content { 
   display: flex; 
-  gap: 20px;
+  gap: 11px;
 }
 
 .logo-column { 
@@ -32,6 +32,12 @@
   font: 800 96px 
   Poppins, sans-serif; 
 }
+
+
+.logo-text {
+  font-size: 150px;
+  position: relative;
+}
 .gauge { 
   color: #1e2a5e;
   font-weight: 500;
@@ -39,10 +45,6 @@
   font-style: italic;
 }
 
-.logo-text {
-  font-size: 150px;
-  position: relative;
-}
 .background-image { 
   position: absolute; 
   inset: 0; 
@@ -55,7 +57,7 @@
 .form-column { 
   display: flex; 
   flex-direction: column; 
-  width: 50%;
+  width: 40%;
 }
 .login-form { 
   background-color: #55679c; 
@@ -71,22 +73,26 @@
 
 .login-title { 
   font-size: 50px; 
-  align-self: center; 
+  align-self: center;
+  font-weight: 50; 
 }
 .input-field { 
   border-radius: 25px; 
   background-color: #fff; 
-  width: 549px; 
+  width: 500px; 
   max-width: 100%; 
+  font-size: large;
   color: #777; 
   padding: 9px 70px 35px; 
 }
+
 .login-button { 
   border-radius: 25px; 
   background-color: #1e2a5e; 
   width: 549px; 
   max-width: 100%; 
   font-size: 40px; 
+  color: rgb(243, 243, 243);
   padding: 28px 70px 16px; 
   border: none; 
   cursor: pointer; 
@@ -125,5 +131,12 @@
   color: #777; 
   padding: 8px 29px 14px; 
 }
-.google-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 41px; }
-.google-text { flex-grow: 1; }
+.google-icon { 
+  aspect-ratio: 1; 
+  object-fit: contain; 
+  object-position: center; 
+  width: 41px; 
+}
+.google-text { 
+  flex-grow: 1; 
+}
