@@ -15,16 +15,16 @@
         <div class="logo-wrapper">
           <img src="../images/login-page.png" alt="" class="background-image" />
           <div class="logo-text">
-            Tech<span class="gauge">Gauge</span>
+            <!-- Tech<span class="gauge">Gauge</span> -->
           </div>
         </div>
       </div>
       <div class="form-column">
-        <form class="login-form">
+        <form class="login-form" action="#">
           <h2 class="login-title">LOGIN</h2>
-          <input type="text" id="username" class="input-field" placeholder="Insert username" aria-label="Insert username" />
-          <input type="password" id="password" class="input-field" placeholder="Insert password" aria-label="Insert password" />
-          <button type="submit" class="login-button">LOGIN</button>
+          <input type="text" id="username" class="input-field" placeholder="Insert username" aria-label="Insert username" required />
+          <input type="password" id="password" class="input-field" placeholder="Insert password" aria-label="Insert password" required/>
+          <input type="submit" class="login-button" value="LOGIN">
           <p class="signup-text">
             Don't have an account? <span style="color: #1e2a5e;">Sign Up!</span>
           </p>
