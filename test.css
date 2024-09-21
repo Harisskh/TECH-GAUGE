@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+  text-decoration: none;
+  list-style: none;
+  /* scroll-behavior: smooth; */
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-container { 
+  background-color: #55679c; 
+  overflow: hidden; 
+}
+
+.login-content { 
+  display: flex; 
+  gap: 20px;
+}
+
+.logo-column { 
+  display: flex; 
+  flex-direction: column; 
+  width: 50%; 
+}
+.logo-wrapper { 
+  position: relative; 
+  min-height: 1024px; 
+  flex-grow: 1; 
+  color: #1e2a5e; 
+  padding: 125px 65px; 
+  font: 800 96px 
+  Poppins, sans-serif; 
+}
+.gauge { 
+  color: #1e2a5e;
+  font-weight: 500;
+  letter-spacing: -2px;
+  font-style: italic;
+}
+
+.logo-text {
+  font-size: 150px;
+  position: relative;
+}
+.background-image { 
+  position: absolute; 
+  inset: 0; 
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover; 
+  object-position: center; 
+}
+
+.form-column { 
+  display: flex; 
+  flex-direction: column; 
+  width: 50%;
+}
+.login-form { 
+  background-color: #55679c; 
+  display: flex; 
+  width: 100%; 
+  flex-direction: column; 
+  align-items: flex-end; 
+  color: #fff; 
+  margin: 0 auto; 
+  padding: 62px 43px 220px; 
+  font: 400 35px Poppins, sans-serif; 
+}
+
+.login-title { 
+  font-size: 50px; 
+  align-self: center; 
+}
+.input-field { 
+  border-radius: 25px; 
+  background-color: #fff; 
+  width: 549px; 
+  max-width: 100%; 
+  color: #777; 
+  padding: 9px 70px 35px; 
+}
+.login-button { 
+  border-radius: 25px; 
+  background-color: #1e2a5e; 
+  width: 549px; 
+  max-width: 100%; 
+  font-size: 40px; 
+  padding: 28px 70px 16px; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.signup-text { 
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+  align-self: stretch; 
+  margin: 10px 0 0 61px; 
+  font: 30px Inter, sans-serif; 
+}
+.divider { 
+  align-self: stretch; 
+  display: flex; 
+  margin-top: 56px; 
+  align-items: center; 
+  gap: 20px; 
+  font: 30px Inter, sans-serif; 
+}
+.divider-line { 
+  align-self: stretch; 
+  width: 241px; 
+  height: 1px; 
+  margin: auto 0; 
+  border: 1px solid #fff; 
+}
+.google-login { 
+  border-radius: 20px; 
+  background-color: #fff; 
+  display: flex; 
+  margin-top: 55px; 
+  width: 549px; 
+  max-width: 100%; 
+  align-items: center; 
+  gap: 40px; 
+  color: #777; 
+  padding: 8px 29px 14px; 
+}
+.google-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 41px; }
+.google-text { flex-grow: 1; }
