@@ -127,13 +127,13 @@ form .input-field{
 .signup-text { 
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
   align-self: stretch; 
-  margin: 10px 0 0 61px; 
+  margin: 0 auto;
   font: 30px Inter, sans-serif; 
 }
 .divider { 
   align-self: stretch; 
   display: flex; 
-  margin-top: 56px; 
+  margin: 56px auto ;
   align-items: center; 
   gap: 20px; 
   font: 30px Inter, sans-serif; 
