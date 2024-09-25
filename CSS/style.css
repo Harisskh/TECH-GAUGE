@@ -38,8 +38,9 @@
 
 
 .logo-text {
-  font-size: 150px;
+  font-size: 110px;
   position: relative;
+  text-align: center;
 }
 .gauge { 
   color: #1e2a5e;
@@ -79,7 +80,7 @@
   align-self: center;
   font-weight: 50; 
   color: #ffffff;
-  /* margin-bottom: 50px; */
+  margin-bottom: 60px;
 }
 
 .form-column form{
@@ -100,17 +101,10 @@ form .input-field{
   color: #777;
   border-radius: 25px;
 }
-/* .input-field { 
-  position: relative;
-  border-radius: 25px; 
-  background-color: #fff; 
-  width: 549px; 
-  max-width: 100%; 
-  font-size: large;
-  color: #777; 
-  margin-top: 20px;
-  padding: 9px 70px 35px; 
-} */
+.input-field{
+  text-align: center;
+  letter-spacing: 2px;
+}
 
 .login-button { 
   border-radius: 25px; 
@@ -122,6 +116,7 @@ form .input-field{
   padding: 28px 70px 16px; 
   border: none; 
   cursor: pointer; 
+  margin-top: 30px;
 }
 
 .signup-text { 
@@ -133,7 +128,7 @@ form .input-field{
 .divider { 
   align-self: stretch; 
   display: flex; 
-  margin: 56px auto ;
+  margin: 30px auto ;
   align-items: center; 
   gap: 20px; 
   font: 30px Inter, sans-serif; 
@@ -148,12 +143,12 @@ form .input-field{
 .google-login { 
   border-radius: 20px; 
   background-color: #fff; 
-  display: flex; 
-  margin-top: 55px; 
+  display: flex;
+  margin-top: 10px; 
   width: 549px; 
   max-width: 100%; 
   align-items: center; 
-  gap: 40px; 
+  gap: 15px; 
   color: #777; 
   padding: 8px 29px 14px; 
 }
@@ -162,7 +157,9 @@ form .input-field{
   object-fit: contain; 
   object-position: center; 
   width: 41px; 
+  
 }
 .google-text { 
   flex-grow: 1; 
+  text-align: center;
 }
