@@ -8,14 +8,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.login-container { 
+.sign-up-container { 
   background-color: #55679c; 
   min-height: 100vh;
   width: 100%;
   overflow: flow; 
 }
 
-.login-content { 
+.sign-up-content { 
   display: flex;
   /* gap: 11px; */
   height: 100vh;
@@ -64,7 +64,7 @@
   width: 50%;
   height: 100vh;
 }
-.login-form { 
+.sign-up-form { 
   background-color: #55679c; 
   display: flex; 
   width: 100%;
@@ -75,7 +75,7 @@
   padding: 61px 43px 220px ; 
   font: 400 35px Poppins, sans-serif;
 }
-.login-title { 
+.sign-up-title { 
   font-size: 54px;
   align-self: center;
   font-weight: 50; 
@@ -106,11 +106,11 @@ form .input-field{
   letter-spacing: 2px;
 }
 
-.input-field:focus {
-  color: black;
+.input-field:focus{
+  color: rgb(20, 1, 1);
 }
 
-.login-button { 
+.sign-up-button { 
   border-radius: 25px; 
   background-color: #1e2a5e; 
   width: 549px; 
@@ -123,16 +123,14 @@ form .input-field{
   margin-top: 30px;
 }
 
-.signup-text { 
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+.login-text { 
   align-self: stretch; 
   margin: 0 auto;
-  font: 30px Inter, sans-serif; 
+  font: 30px Inter, sans-serif;
 }
-#sign-up-text:hover{
+#login-text:hover{
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
   text-decoration: underline;  
-  
 }
 
 .divider { 
@@ -150,7 +148,7 @@ form .input-field{
   margin: auto 0; 
   border: 1px solid #fff; 
 }
-.google-login { 
+.google-sign-up { 
   border-radius: 20px; 
   background-color: #fff; 
   display: flex;
@@ -160,13 +158,14 @@ form .input-field{
   align-items: center; 
   gap: 15px; 
   color: #777; 
-  padding: 8px 29px 14px; 
+  padding: 8px 29px 14px;
 }
 .google-icon { 
   aspect-ratio: 1; 
   object-fit: contain; 
   object-position: center; 
   width: 41px; 
+  margin:2px;
   
 }
 .google-text { 
