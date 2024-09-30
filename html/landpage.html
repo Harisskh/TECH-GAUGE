@@ -7,31 +7,47 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/landpage.css">
   <title>Landing Page</title>
 </head>
 <body>
   <header class="landing-page">
     <div class="main-container">
-      <nav class="header-nav">
-        <h1 class="logo"><span class="bold-text">T</span>G</h1>
-        <div class="nav-item-wrapper">
-          <a href="#" class="nav-item">Comparison</a>
-          <a href="#" class="nav-item">Brands</a>
-          <a href="#" class="nav-item">About Us</a>
+        <div class="nav">
+          <nav>
+            <ul>
+            <div class="logo">
+              <a href="#">T<span class="gauge">G</span></a>
+            </div>
+              <li><a href="#">Comparison</a></li>
+              <li><a href="#">Brands</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+            <div class="user-icon">
+              <i class="fa fa-user-circle-o custom-style" aria-hidden="true"></i>
+            </div>
+          </nav>
         </div>
-        <img src="images/user logo.png" alt="User profile" class="user-icon" />
-      </nav>
-  
-      <h2 class="main-title">Tech <span class="italic-text">Gauge</span></h2>
-      <p class="subtitle">Your Guide to Smart Tech Decisions</p>
-  
-      <form class="search-container" role="search">
-        <label for="search-input" class="visually-hidden">Search here to compare</label>
-        <img src="images/search logo.png" alt="Search Icon" class="search-icon" />
-        <input type="search" id="search-input" class="search-input" placeholder="Search here to compare" />
-      </form>
-      
-      <button type="submit" class="compare-button">Compare</button>
+
+      <div class="content-area">
+      <div class="main-title">
+        Tech<span class="gauge">Gauge</span>
+      </div>
+        <p class="subtitle">Your Guide to Smart Tech Decisions</p>
+        <div class="compare-area">
+            <div class="search up">
+              <i class="fa fa-search custom-style" id="search-icon" aria-hidden="true"></i>
+              <input type="text" placeholder="Search here to compare">
+            </div>
+            <div class="search down">
+              <i class="fa fa-search custom-style" id="search-icon" aria-hidden="true"></i>
+              <input type="text" placeholder="Search here to compare">
+            </div>
+            <div class="button">
+              <button type="submit" class="compare-button">Compare</button>
+            </div>
+        </div>
+      </div>
     </div>
   </header>
     

@@ -56,6 +56,7 @@
   width: 100%; 
   object-fit: cover; 
   object-position: center; 
+  background-attachment: fixed;
 }
 
 .form-column { 
@@ -98,7 +99,7 @@ form .input-field{
   font-size: 30px;
   justify-content: center;
   font-weight: 400;
-  color: #777;
+  color: #333333;
   border-radius: 25px;
 }
 .input-field{
@@ -107,7 +108,7 @@ form .input-field{
 }
 
 .input-field:focus {
-  color: black;
+  color: #333333;
 }
 
 .login-button { 
@@ -160,7 +161,7 @@ form .input-field{
   align-items: center; 
   gap: 15px; 
   color: #777; 
-  padding: 8px 29px 14px; 
+  padding: 10px 29px 14px; 
 }
 .google-icon { 
   aspect-ratio: 1; 

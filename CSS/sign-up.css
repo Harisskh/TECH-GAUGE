@@ -72,7 +72,7 @@
   align-items: center; 
   color: #fff; 
   margin: 0 auto; 
-  padding: 61px 43px 220px ; 
+  padding: 61px 43px 125px ; 
   font: 400 35px Poppins, sans-serif;
 }
 .sign-up-title { 
@@ -98,7 +98,7 @@ form .input-field{
   font-size: 30px;
   justify-content: center;
   font-weight: 400;
-  color: #777;
+  color: #333333;
   border-radius: 25px;
 }
 .input-field{
@@ -107,7 +107,7 @@ form .input-field{
 }
 
 .input-field:focus{
-  color: rgb(20, 1, 1);
+  color: #333333;
 }
 
 .sign-up-button { 
@@ -158,7 +158,7 @@ form .input-field{
   align-items: center; 
   gap: 15px; 
   color: #777; 
-  padding: 8px 29px 14px;
+  padding: 10px 29px 14px;
 }
 .google-icon { 
   aspect-ratio: 1; 
