@@ -7,12 +7,17 @@
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
+html, body{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 .login-container { 
   background-color: #55679c; 
   min-height: 100vh;
   width: 100%;
-  overflow: flow; 
+  overflow: hidden; 
 }
 
 .login-content { 
@@ -161,6 +166,7 @@ form .input-field{
   align-items: center; 
   gap: 15px; 
   color: #777; 
+  cursor: pointer;
   padding: 10px 29px 14px; 
 }
 .google-icon { 

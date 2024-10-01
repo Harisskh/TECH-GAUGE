@@ -7,73 +7,76 @@
   scroll-behavior: smooth;
 }
 
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(115deg, #1e2a5e 10%, #55679C 80%);
   color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-.landing-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 10px;
   overflow: hidden;
+  background-repeat: no-repeat;
 }
 
 .main-container {
-  width: 100%;
-  /* max-width: 1200px; */
-  text-align: center;
-  padding: 30px 20px;
-}
-
-ul{
-    display: flex;
-    gap: 60px;
-}
-
-.nav{
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
   padding: 10px 20px;
-  margin: 0;
-  position: relative;
-  /* gap: 176px; */
+  margin-top: 140px;
+} 
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 28px 12%;
+  transition: all .5s ease;
 }
 
-.logo a{
-  font-size: 48px;
+.logo{
+  font-size: 45px;
   font-weight: 800;
   line-height: 72px;
   color: #fff;
   letter-spacing: -2px;
 }
 
-nav a{
+.user-icon {
+  color: white; 
+  font-size: 45px;
+}
+
+.navbar{
+  display: flex;
+}
+
+.navbar a{
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: 400;
   line-height: 36px;
   align-items: center;
   text-align: center;
+  margin: auto 50px;
+  transition: all .3s ease;
 }
 
-nav a:hover{
-  color: #d5d4ce;
-  transition: all .2s ;
+.navbar a:hover{
+  color: #b8b8b5;
+  text-decoration: underline;
 }
-
-.user-icon {
-  color: white; 
-  font-size: 24px; 
-}
-
 
 .main-title {
   margin-top: 80px;
@@ -124,11 +127,10 @@ nav a:hover{
   object-fit: contain;
   object-position: center;
   font-size: 28px;
-  /* font-weight: lighter; */
 }
 
 .search input{
-  width: 430px;
+  width: 615px;
   height: 30px;
   color: #333333;
   border: none;
