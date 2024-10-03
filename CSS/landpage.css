@@ -12,6 +12,7 @@ html,body{
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(115deg, #1e2a5e 10%, #55679C 80%);
@@ -44,12 +45,8 @@ header {
   transition: all .5s ease;
 }
 
-.logo{
-  font-size: 45px;
-  font-weight: 800;
-  line-height: 72px;
-  color: #fff;
-  letter-spacing: -2px;
+.logo img{
+  width: 140px;
 }
 
 .user-icon {

@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* ======== NAVBAR ======== */
+header {
+  /* position: fixed; */
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 28px 12%;
+  transition: all 0.5s ease;
+  background-color: #55679c;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.user-icon {
+  color: white;
+  font-size: 45px;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 36px;
+  align-items: center;
+  text-align: center;
+  margin: auto 50px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #b8b8b5;
+  text-decoration: underline;
+}
+
+/* ========= Sub - Navbar ========= */
+.sub-navbar {
+  background-color: #1e2a5e;
+  height: 70px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 130px;
+}
+
+.sub-navbar a {
+  color: white;
+  font-size: 23px;
+}
+
+.sub-navbar a:hover {
+  color: #b8b8b5;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+/* =========== Device Image =========== */
+.versus {
+  width: 100%;
+  margin: 50px 0 30px 0;
+}
+
+.vertikal-line {
+  border-left: 1px solid black;
+  height: 500px;
+  width: 2px;
+  margin-bottom: 50px;
+}
+
+.vertikal-line span {
+  position: absolute;
+  background-color: white;
+  padding: 40px;
+  bottom: 45%;
+  right: 46%;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 4px;
+  font-size: 30px;
+}
+
+.dev-img {
+  margin: 80px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 10%;
+}
+
+.dev-img img {
+  width: 30vw;
+}
+
+.dev-img .dev-name h2{
+    justify-content: center;
+    display: flex;
+}
+
+.horizontal-line-name{
+    margin-top: 10px;
+    width: 70%;
+    height: 2px;
+    background-color: black !important;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    right: -15%;
+}
