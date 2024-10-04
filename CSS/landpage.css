@@ -15,7 +15,7 @@ html,body{
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(115deg, #1e2a5e 10%, #55679C 80%);
+  background: linear-gradient(115deg, #1e2a5e 20%, #55679C 80%);
   color: #fff;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -28,11 +28,11 @@ body {
   width: 100%;
   text-align: center;
   padding: 10px 20px;
-  margin-top: 140px;
+  margin-top: 40px;
 } 
 
 header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 0;
   right: 0;
@@ -41,7 +41,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background: transparent;
-  padding: 28px 15%;
+  padding: 15px 15%;
   transition: all .5s ease;
 }
 
@@ -71,7 +71,7 @@ header {
 }
 
 .navbar a:hover{
-  color: #c2c2ba;
+  color: #b8b8b5;
   text-decoration: underline;
 }
 
@@ -148,7 +148,7 @@ header {
   padding: 10px 27px;
   cursor: pointer;
   font-size: 20px;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .compare-button:hover {
