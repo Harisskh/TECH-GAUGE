@@ -113,19 +113,68 @@ header {
   width: 30vw;
 }
 
-.dev-img .dev-name h2{
-    justify-content: center;
-    display: flex;
+.dev-img .dev-name h2 {
+  justify-content: center;
+  display: flex;
 }
 
-.horizontal-line-name{
-    margin-top: 10px;
-    width: 70%;
-    height: 2px;
-    background-color: black !important;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    right: -15%;
+.horizontal-line-name {
+  margin-top: 10px;
+  width: 70%;
+  height: 2px;
+  background-color: black !important;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  right: -15%;
+}
+
+/* =========== SPECS ========== */
+.specs {
+  margin-bottom: 50px;
+}
+
+.specs h3 {
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 850;
+  margin: 10px;
+}
+
+.specs-content {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  gap: 7%;
+}
+
+.specs-1,
+.specs-2 {
+  width: 30%;
+}
+
+.line-specs {
+  width: 1px;
+  height: 100px;
+  background-color: black;
+}
+
+/* =========== Performance =========== */
+.perform {
+  margin-bottom: 50px;
+}
+
+.perform h3 {
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 850;
+  margin: 10px;
 }
