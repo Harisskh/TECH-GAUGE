@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=0.67">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/style.css">
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script defer src="../JS/login.js"></script>
   <title>Tech Gauge</title>
 </head>
 
@@ -22,8 +24,8 @@
       <div class="form-column">
         <form class="login-form" action="#">
           <h2 class="login-title">LOGIN</h2>
-          <input type="text" id="username" class="input-field" placeholder="Insert username" aria-label="Insert username" autocomplete="off" required/>
-          <input type="password" id="password" class="input-field" placeholder="Insert password" aria-label="Insert password" autocomplete="off" required/>
+          <input type="text" id="username" class="input-field" placeholder="Username" aria-label="Username" autocomplete="off" spellcheck="false" required/>
+          <input type="password" id="password" class="input-field" placeholder="Password" aria-label="Password" autocomplete="off" required/>
           <input type="submit" class="login-button" value="LOGIN">
           <p class="signup-text">
             Don't have an account? <a id="sign-up-text" href="sign-up.html" style="color: #1e2a5e;">Sign Up!</a>
@@ -33,10 +35,14 @@
             <span>or</span>
             <div class="divider-line"></div>
           </div>
+          
           <div class="google-login" role="button" tabindex="0">
             <img src="../images/google-logo.png" alt="Google logo" class="google-icon" />
             <span class="google-text">Login with google</span>
+            </div>
           </div>
+      </div>
+
         </form>
       </div>
     </div>
