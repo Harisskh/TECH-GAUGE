@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -56,7 +58,7 @@ header {
 /* ========= Sub - Navbar ========= */
 .sub-navbar {
   background-color: #1e2a5e;
-  height: 70px;
+  height: 55px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -166,6 +168,13 @@ header {
 }
 
 /* =========== Performance =========== */
+.perfomance-bar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1400px;
+  margin: auto;
+}
+
 .perform {
   margin-bottom: 50px;
 }
@@ -177,4 +186,58 @@ header {
   text-transform: uppercase;
   font-weight: 850;
   margin: 10px;
+}
+
+.perform-bar h1{
+  text-align: center;
+}
+
+.perform-bar h4{
+  margin: 5px;
+}
+
+.perform-bar{
+  width: 500px;
+  margin: 60px auto;
+  color: #000000;
+  padding: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 20px;
+}
+
+.perform-bar li{
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.bar{
+  background: #353b48;
+  display: block;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,.1);
+}
+
+.bar:hover{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.bar span{
+  height: 20px;
+  float: left;
+}
+
+.bar1{
+  width: 25%;
+  animation: bar1 3s;
+  background: red !important;
+}
+
+.bar2{
+  width: 12.5%;
+  animation: bar2 3s;
+  background: blue !important;
 }
