@@ -269,7 +269,7 @@
     .story-section {
       display: flex;
       margin-top: 151px;
-      width: 80%;
+      width: 100%;
       flex-direction: column;
     }
     
