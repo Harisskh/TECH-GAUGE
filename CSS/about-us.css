@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
 }
     .about-us {
       background-color: #fff;
@@ -267,7 +269,7 @@
     .story-section {
       display: flex;
       margin-top: 151px;
-      width: 100%;
+      width: 80%;
       flex-direction: column;
     }
     
