@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/sign-up.css">
-  <script defer src="../JS/main.js"></script>
+  <script defer src="../JS/main.js"></script> <!-- This is where the JS will go -->
   <script src="https://accounts.google.com/gsi/client" async></script>
   <title>Sign Up</title>
 </head>
@@ -22,18 +22,25 @@
         </div>
       </div>
       <div class="form-column">
-        <form class="sign-up-form" action="#">
+        <form id="sign-up-form" class="sign-up-form">
           <h2 class="sign-up-title">SIGN UP</h2>
-          <input type="text" id="gmail" class="input-field" placeholder="Email" aria-label="Email" required spellcheck="false" autocomplete="off"/>
+          
+          <input type="email" id="email" class="input-field" placeholder="Email" aria-label="Email" required spellcheck="false" autocomplete="off"/>
           <div id="emailError" class="error"></div>
+          
           <input type="text" id="username" class="input-field" placeholder="Create username" aria-label="Create username" spellcheck="false" required autocomplete="off"/>
           <div id="usernameError" class="error"></div>
+          
           <input type="password" id="password" class="input-field" placeholder="Create password" aria-label="Create password" required autocomplete="off"/>
           <div id="passwordError" class="error"></div>
+          
           <p class="login-text">
             Already have an account? <a href="index.html" id="login-text" style="color: #1e2a5e;">Login</a>
           </p>
-          <button onclick="signup()" type="submit" class="sign-up-button">SIGN UP</button>
+          
+          <!-- Submit button -->
+          <button type="submit" class="sign-up-button">SIGN UP</button>
+          
           <div class="divider">
             <div class="divider-line"></div>
             <span>or</span>
@@ -43,26 +50,69 @@
           <div class="google-sign-up" role="button" tabindex="0">
             <div id="g_id_onload"
               data-context="signup"
-              data-client_id="11063273909-jbdea89ip5kqm5u2uo504p4dhtecaj1a.apps.googleusercontent.com"
+              data-client_id="YOUR_GOOGLE_CLIENT_ID"
               data-callback="handleCredentialResponse"
               data-ux_mode="popup"
               data-auto_prompt="false">
-            <!-- <img src="../images/google-logo.png" alt="Google logo" class="google-icon" />
-            <button onclick="googlesignup()" type="submit" class="google-signup">Sign up with google</button> -->
             <div class="g_id_signin" 
-            data-type="standard"
-            data-shape="rectangular"
-            data-theme="outline"
-            data-text="signin_with"
-            data-size="larger"
-            data-logo-alignment="center">
-          </div>
+              data-type="standard"
+              data-shape="rectangular"
+              data-theme="outline"
+              data-text="signin_with"
+              data-size="larger"
+              data-logo-alignment="center">
+            </div>
           </div>
         </form>
       </div>
     </div>
   </section>
 
+  <script>
+    // JS code to handle the sign-up form submission and send data to the register API
+    document.getElementById('sign-up-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+      // Collect input values
+      const email = document.getElementById('email').value;
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Validate the form (basic validation)
+      if (!email || !username || !password) {
+        alert('Please fill in all the fields');
+        return;
+      }
+
+      // Create FormData object to send the data
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('username', username);
+      formData.append('password', password);
+
+      // Create the request options for the fetch call
+      const requestOptions = {
+        method: 'POST',
+        body: formData,
+        redirect: 'follow'
+      };
+
+      // Send the data to the register API
+      fetch('http://localhost/tech-gauge/register.php', requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          // Handle success and failure
+          if (result.status === 201) {
+            alert('Registration successful!');
+            // Optionally, redirect to login page
+            window.location.href = 'index.html';
+          } else {
+            alert('Error: ' + result.message);
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
 
 </body>
 </html>
