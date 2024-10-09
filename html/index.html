@@ -22,31 +22,79 @@
         </div>
       </div>
       <div class="form-column">
-        <form class="login-form" action="#">
+        <!-- Updated form with submit event handling through JavaScript -->
+        <form id="login-form" class="login-form">
           <h2 class="login-title">LOGIN</h2>
+          
           <input type="text" id="username" class="input-field" placeholder="Username" aria-label="Username" autocomplete="off" spellcheck="false" required/>
           <input type="password" id="password" class="input-field" placeholder="Password" aria-label="Password" autocomplete="off" required/>
-          <input type="submit" class="login-button" value="LOGIN">
+          
+          <!-- The form submission will be handled via JavaScript -->
+          <button type="submit" class="login-button">LOGIN</button>
+          
           <p class="signup-text">
             Don't have an account? <a id="sign-up-text" href="sign-up.html" style="color: #1e2a5e;">Sign Up!</a>
           </p>
+          
           <div class="divider">
             <div class="divider-line"></div>
             <span>or</span>
             <div class="divider-line"></div>
           </div>
-          
+
           <div class="google-login" role="button" tabindex="0">
             <img src="../images/google-logo.png" alt="Google logo" class="google-icon" />
             <span class="google-text">Login with google</span>
-            </div>
           </div>
-      </div>
-
         </form>
       </div>
     </div>
   </section>
+
+  <script>
+    // Handle form submission for login
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+      // Get input values
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Validate form data
+      if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+      }
+
+      // Create FormData object to send the data
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('password', password);
+
+      // Fetch API to send the login request
+      fetch('http://localhost/tech-gauge/login.php', {
+        method: 'POST',
+        body: formData,
+        redirect: 'follow'
+      })
+      .then(response => response.json())
+      .then(result => {
+        // Check if the login is successful
+        if (result.status === 200) {
+          alert('Login successful!');
+          // Redirect to landpage.html
+          window.location.href = 'landpage.html';
+        } else {
+          // Show error message if login fails
+          alert('Error: ' + result.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred during login.');
+      });
+    });
+  </script>
 
 </body>
 </html>
