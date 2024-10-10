@@ -62,55 +62,6 @@
       </div>
     </footer>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      let selectedRating = 0;
-
-      // Mendapatkan semua elemen bintang
-      const stars = document.querySelectorAll(".star-rating i");
-
-      // Menangani klik pada bintang
-      stars.forEach((star, index) => {
-        star.addEventListener("click", function() {
-          selectedRating = index + 1; // Mengatur rating sesuai dengan urutan bintang yang diklik
-          highlightStars(selectedRating); // Memperbarui warna bintang yang dipilih
-        });
-      });
-
-      // Fungsi untuk memperbarui bintang yang disorot
-      function highlightStars(rating) {
-        stars.forEach((star, index) => {
-          if (index < rating) {
-            star.classList.remove("fa-regular");
-            star.classList.add("fa-solid");
-          } else {
-            star.classList.remove("fa-solid");
-            star.classList.add("fa-regular");
-          }
-        });
-      }
-
-      // Mendapatkan elemen tombol submit
-      const submitButton = document.querySelector(".submit-button");
-
-      // Menangani klik pada tombol submit
-      submitButton.addEventListener("click", function(event) {
-        event.preventDefault(); // Mencegah refresh halaman setelah klik submit
-        const reviewMessage = document.getElementById("review-text").value;
-
-        if (selectedRating === 0) {
-          alert("Please select a rating before submitting your review.");
-        } else if (reviewMessage.trim() === "") {
-          alert("Please write a review message before submitting.");
-        } else {
-          // Menampilkan pesan setelah submit
-          alert(`Thank you for your review! You rated ${selectedRating} stars with the message: "${reviewMessage}"`);
-        }
-      });
-    });
-  </script>
-  
 </body>
 </html>
   
