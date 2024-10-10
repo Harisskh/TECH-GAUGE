@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
   const userIcon = document.getElementById('user-icon');
   const dropdownMenu = document.querySelector('.dropdown-menu');
   const laptopSearch1 = document.getElementById('laptop-search-1');
@@ -7,22 +7,41 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchResults2 = document.getElementById('search-results-2');
   const compareBtn = document.getElementById('compare-btn');
 
-  // Sample laptop data (replace with actual database or data fetch)
-  const laptops = [
-    'Dell XPS 13',
-    'MacBook Pro 16',
-    'Lenovo ThinkPad X1 Carbon',
-    'HP Spectre x360',
-    'ASUS ROG Zephyrus G14'
-  ];
+  // Fetch user login status from your database
+  let userLoggedIn = false;
+  try {
+    const response = await fetch('http://localhost/tech-gauge/register.php'); // Sesuaikan dengan endpoint login milikmu
+    const data = await response.json();
+    userLoggedIn = data.loggedIn; // Contoh respons login
+  } catch (error) {
+    console.error('Error fetching login status:', error);
+  }
 
-  let selectedLaptops = [];
-
-  // User icon dropdown
-  userIcon.addEventListener('click', function(e) {
-    e.stopPropagation(); // Prevent closing dropdown
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-  });
+  // Jika pengguna sudah login, ubah icon menjadi "Sign Out"
+  if (userLoggedIn) {
+    userIcon.innerHTML = 'Sign Out'; // Mengubah tulisan jadi "Sign Out"
+    
+    // Fungsi untuk menangani klik tombol sign out
+    userIcon.addEventListener('click', async function() {
+      try {
+        const response = await fetch('/api/logout', { method: 'POST' }); // Sesuaikan dengan endpoint logout milikmu
+        if (response.ok) {
+          alert('You have been signed out!');
+          window.location.reload(); // Reload halaman setelah sign out
+        } else {
+          alert('Failed to sign out');
+        }
+      } catch (error) {
+        console.error('Error signing out:', error);
+      }
+    });
+  } else {
+    // Logika untuk user dropdown dan login
+    userIcon.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent closing dropdown
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+  }
 
   // Close dropdown when clicking outside
   document.addEventListener('click', function(event) {
@@ -31,25 +50,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Close dropdown search results when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('#search-results-1') && !event.target.closest('#laptop-search-1')) {
-      searchResults1.style.display = 'none';
-    }
-    if (!event.target.closest('#search-results-2') && !event.target.closest('#laptop-search-2')) {
-      searchResults2.style.display = 'none';
-    }
-  });
-
   // Laptop search functionality for search bar 1
   laptopSearch1.addEventListener('input', function() {
-    const searchTerm = this.value.trim().toLowerCase(); // Case-insensitive and trimmed input
-    const filteredLaptops = laptops.filter(laptop => 
+    const searchTerm = this.value.trim().toLowerCase();
+    const filteredLaptops = laptops.filter(laptop =>
       laptop.toLowerCase().includes(searchTerm)
     );
-
     if (filteredLaptops.length === 0 && searchTerm !== '') {
-      // If no laptops match the search term, show message in the dropdown
       displayNoResults(searchResults1);
     } else {
       displaySearchResults(filteredLaptops, searchResults1, laptopSearch1);
@@ -59,21 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // Laptop search functionality for search bar 2
   laptopSearch2.addEventListener('input', function() {
     const searchTerm = this.value.trim().toLowerCase();
-    const filteredLaptops = laptops.filter(laptop => 
+    const filteredLaptops = laptops.filter(laptop =>
       laptop.toLowerCase().includes(searchTerm)
     );
-
     if (filteredLaptops.length === 0 && searchTerm !== '') {
-      // If no laptops match the search term, show message in the dropdown
       displayNoResults(searchResults2);
     } else {
       displaySearchResults(filteredLaptops, searchResults2, laptopSearch2);
     }
   });
 
+  // Function for displaying search results
   function displaySearchResults(results, searchResultsElement, searchInputElement) {
     searchResultsElement.innerHTML = ''; // Clear previous results
-
     results.forEach(laptop => {
       const laptopElement = document.createElement('a');
       laptopElement.href = '#';
@@ -84,20 +89,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       searchResultsElement.appendChild(laptopElement);
     });
-    searchResultsElement.style.display = results.length > 0 ? 'block' : 'none'; // Show if results exist
+    searchResultsElement.style.display = results.length > 0 ? 'block' : 'none';
   }
 
   function displayNoResults(searchResultsElement) {
-    searchResultsElement.innerHTML = ''; // Clear previous results
+    searchResultsElement.innerHTML = '';
     const noResultsMessage = document.createElement('div');
     noResultsMessage.textContent = 'Laptop not available';
-    noResultsMessage.style.color = 'red'; // Add styling to make it more noticeable
-    noResultsMessage.style.padding = '10px'; // Add padding to the message
-  noResultsMessage.style.fontSize = '16px'; // Increase font size
+    noResultsMessage.style.color = 'red';
+    noResultsMessage.style.padding = '10px';
+    noResultsMessage.style.fontSize = '16px';
     searchResultsElement.appendChild(noResultsMessage);
-    searchResultsElement.style.display = 'block'; // Show the no results message
+    searchResultsElement.style.display = 'block';
   }
 
+  // Function for selecting laptops
   function selectLaptop(laptop, searchInputElement) {
     if (selectedLaptops.length < 2 && !selectedLaptops.includes(laptop)) {
       selectedLaptops.push(laptop);
@@ -122,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
 
 
 //edwin punya
