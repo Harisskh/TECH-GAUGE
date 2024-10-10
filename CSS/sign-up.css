@@ -7,17 +7,17 @@
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
-html, body{
-  height: 100vh;
+html {
   padding: 0;
   margin: 0;
+  background-color: #161d6f;
 }
 
 .sign-up-container { 
-  background-color: #55679c; 
-  min-height: 100vh;
+  background-color: #161d6f; 
+  min-height: 100vh; 
   width: 100%;
-  overflow: flow; 
+  overflow: hidden; 
 }
 
 .sign-up-content { 
@@ -36,9 +36,8 @@ html, body{
   flex-grow: 1; 
   color: #1e2a5e; 
   padding: 80px 65px; 
-  font: 800 96px
-  Poppins, sans-serif; 
-  height: 100vh;
+  font: 800 96px Poppins, sans-serif; 
+  /* height: 100vh; */
   /* min-height: 1024px; */
 }
 
@@ -57,11 +56,11 @@ html, body{
 .background-image { 
   position: absolute; 
   inset: 0; 
-  height: 100vh; 
+  height: 100%;
   width: 100%; 
   object-fit: cover;
-  background-size: contain;
-  background-repeat: no-repeat;
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
   object-position: center; 
   /* background-attachment: fixed; */
 }
@@ -73,7 +72,7 @@ html, body{
   height: 100vh;
 }
 .sign-up-form { 
-  background-color: #55679c; 
+  background-color: #161d6f; 
   display: flex; 
   width: 100%;
   flex-direction: column; 
@@ -120,7 +119,7 @@ form .input-field{
 
 .sign-up-button { 
   border-radius: 20px; 
-  background-color: #1e2a5e; 
+  background-color: #55679c; 
   width: 449px; 
   max-width: 100%; 
   font-size: 30px; 
@@ -128,23 +127,22 @@ form .input-field{
   padding: 20px 70px; 
   border: none; 
   cursor: pointer; 
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 .sign-up-button:hover{
   transition: all .2s ease-in;
-  background-color: #182978;
+  background-color: #556eea;
 }
 .sign-up-button:active{
-  transition: all ease-out;
-  background-color: #26367c;
+  transition: all .2s ease-out;
+  background-color: #1a3676;
 }
-.error {
+/* .error {
   color: #f74e4e;
   margin-top: -10px;
-  /* margin-bottom: 10px; */
   font-size: 20px;
-}
+} */
 
 .login-text { 
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
@@ -161,7 +159,7 @@ form .input-field{
 .divider { 
   align-self: stretch; 
   display: flex; 
-  margin: 30px auto ;
+  margin: 20px auto ;
   align-items: center; 
   gap: 20px; 
   font: 20px Inter, sans-serif; 
@@ -171,9 +169,9 @@ form .input-field{
   width: 200px; 
   height: 1px; 
   margin: auto 0; 
-  border: 1px solid #fff; 
+  border: 1px solid #55679c; 
 }
-.google-sign-up { 
+/* #g_id_onload { 
   border-radius: 17px; 
   background-color: #fff; 
   display: flex;
@@ -181,7 +179,6 @@ form .input-field{
   width: 449px; 
   max-width: 100%; 
   align-items: center; 
-  /* gap: 15px;  */
   color: #777; 
   padding: 9px 29px;
   cursor: pointer;
@@ -199,4 +196,4 @@ form .input-field{
   cursor: pointer; 
   border: none; 
   color: #777;
-}
+} */
