@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-// // Wait for DOM to load
+//edwin punya
+// Wait for DOM to load
 // document.addEventListener('DOMContentLoaded', function () {
 //     // Dropdown functionality for user icon
 //     const userIcon = document.querySelector('.user-icon');
