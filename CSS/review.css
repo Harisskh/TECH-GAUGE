@@ -59,29 +59,6 @@
     text-decoration: underline;
   }
   
-  /* ========= Sub - Navbar ========= */
-  .sub-navbar {
-    background-color: #55679c;
-    height: 55px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    gap: 130px;
-  }
-  
-  .sub-navbar a {
-    color: white;
-    font-size: 23px;
-  }
-  
-  .sub-navbar a:hover {
-    color: #b8b8b5;
-    transform: scale(1.1);
-    transition: 0.3s ease-in-out;
-  }
-  
-  
   .review-form {
     align-self: center;
     display: flex;
