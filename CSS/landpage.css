@@ -13,11 +13,11 @@ html,body{
   padding: 0;
 }
 
-body {
+html,body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(115deg, #1e2a5e 20%, #55679C 80%);
   color: #fff;
-  overflow: hidden;
+  overflow: flow;
   background-repeat: no-repeat;
 }
 
@@ -49,31 +49,41 @@ header {
   width: 70px;
 }
 
-.user-icon {
-  color: white; 
+#user-icon {
+  position: relative;
+  display: inline-block;
+  color: white;
   font-size: 40px;
 }
-/* .dropdown-menu {
-  display: none;
+
+.dropdown-menu {
+  display: none; /* Disembunyikan secara default */
   position: absolute;
+  top: 50px;
   right: 0;
   background-color: #f9f9f9;
-  min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 10000;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 10px;
 }
+
 
 .dropdown-menu a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
+  justify-content: center;
+  align-items: center;
   display: block;
+  font-size: 18px;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f1f1f1;
-} */
-
+  background-color: #ede9e9;
+  color: #002ab4;
+  border-radius: 10px;
+}
 
 .navbar{
   display: flex;
@@ -103,6 +113,7 @@ header {
   font-family: 'Poppins', sans-serif;
   letter-spacing: -2px;
 }
+
 .gauge {
   font-style: italic;
   font-weight: 500;
@@ -149,7 +160,7 @@ header {
 }
 
 .search input{
-  width: 615px;
+  width: 449px;
   height: 30px;
   color: #333;
   border: none;
@@ -162,7 +173,7 @@ header {
   outline: none;
 }
 
-.compare-button {
+#compare-btn {
   background-color: #1e2a5e;
   color: #E1D7B7;
   border: none;
@@ -173,11 +184,43 @@ header {
   margin-top: 15px;
 }
 
-.compare-button:hover {
+#compare-btn:hover {
   transition: all .2s ease-in;
   background-color: #16234e;
+  box-shadow: 0px 0px 15px rgb(255,255,255, 0.5);
+  transform: scale(1.03);
+  text-shadow: 0px 0px 5px rgb(255,255,255, 0.5);
 }
-.compare-button:active {
+#compare-btn:active {
   transition: all ease-in;
   background-color: #0c173c;
+}
+
+#search-results div {
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.dropdown-content {
+  margin-top: 150px;
+  margin-left: 220px;
+  border-radius: 10px;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  border-radius: 10px;
+  background-color: #e2dfdf;
 }
