@@ -13,6 +13,7 @@
       margin-left: 1px;
     }
     
+
     .header {
       background-color: #55679c;
       display: flex;
@@ -45,10 +46,11 @@
       }
     }
     
-    .logo-container {
+    .logo-container img{
       display: flex;
       gap: 40px 52px;
       flex-wrap: wrap;
+      width: 50px;
     }
     
     @media (max-width: 991px) {
