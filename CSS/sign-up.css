@@ -42,7 +42,7 @@ html {
 }
 
 .logo-text {
-  font-size: 80px;
+  font-size: 70px;
   position: relative;
   text-align: center;
 }
@@ -83,7 +83,7 @@ html {
   font: 400 35px Poppins, sans-serif;
 }
 .sign-up-title { 
-  font-size: 37px;
+  font-size: 30px;
   align-self: center;
   font-weight: 50; 
   color: #ffffff;
@@ -97,12 +97,12 @@ html {
   margin-top: 30px;
 }
 form .input-field{
-  width: 449px;
-  height: 50px;
+  width: 400px;
+  height: 45px;
   outline: none;
   border: none;
   padding: 0 15px;
-  font-size: 25px;
+  font-size: 22px;
   justify-content: center;
   font-weight: 400;
   color: #333333;
@@ -120,11 +120,11 @@ form .input-field{
 .sign-up-button { 
   border-radius: 20px; 
   background-color: #55679c; 
-  width: 449px; 
+  width: 400px; 
   max-width: 100%; 
-  font-size: 30px; 
+  font-size: 25px; 
   color: rgb(243, 243, 243);
-  padding: 20px 70px; 
+  padding: 15px 70px; 
   border: none; 
   cursor: pointer; 
   margin-top: 10px;
@@ -149,7 +149,7 @@ form .input-field{
   align-self: stretch; 
   margin: 0 auto;
   letter-spacing: 1px;
-  font: 20px Inter, sans-serif;
+  font: 18px Inter, sans-serif;
 }
 #login-text:hover{
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
@@ -166,7 +166,7 @@ form .input-field{
 }
 .divider-line { 
   align-self: stretch; 
-  width: 200px; 
+  width: 170px; 
   height: 1px; 
   margin: auto 0; 
   border: 1px solid #55679c; 

@@ -41,7 +41,7 @@ html, body{
 
 
 .logo-text {
-  font-size: 80px;
+  font-size: 70px;
   position: relative;
   text-align: center;
 }
@@ -80,7 +80,7 @@ html, body{
   font: 400 35px Poppins, sans-serif;
 }
 .login-title { 
-  font-size: 37px;
+  font-size: 30px;
   align-self: center;
   font-weight: 50; 
   color: #ffffff;
@@ -94,12 +94,12 @@ html, body{
   margin-top: 30px;
 }
 form .input-field{
-  width: 449px;
-  height: 50px;
+  width: 400px;
+  height: 45px;
   outline: none;
   border: none;
   padding: 0 15px;
-  font-size: 25px;
+  font-size: 22px;
   justify-content: center;
   font-weight: 400;
   color: #333333;
@@ -117,11 +117,11 @@ form .input-field{
 .login-button { 
   border-radius: 20px; 
   background-color: #55679c; 
-  width: 449px; 
+  width: 400px; 
   max-width: 100%; 
-  font-size: 30px; 
+  font-size: 25px; 
   color: rgb(243, 243, 243);
-  padding: 20px 70px; 
+  padding: 15px 70px; 
   border: none; 
   cursor: pointer; 
   margin-top: 25px;
@@ -140,7 +140,7 @@ form .input-field{
   align-self: stretch; 
   margin: 0 auto;
   letter-spacing: 1px;
-  font: 20px Inter, sans-serif; 
+  font: 18px Inter, sans-serif; 
 }
 #sign-up-text:hover{
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
@@ -150,19 +150,19 @@ form .input-field{
 .divider { 
   align-self: stretch; 
   display: flex; 
-  margin: 30px auto ;
+  margin: 20px auto ;
   align-items: center; 
   gap: 20px; 
   font: 20px Inter, sans-serif; 
 }
 .divider-line { 
   align-self: stretch; 
-  width: 200px; 
+  width: 170px; 
   height: 1px; 
   margin: auto 0; 
   border: 1px solid #fff; 
 }
-.google-login { 
+/* #g_id_onload { 
   border-radius: 17px; 
   background-color: #fff; 
   display: flex;
@@ -170,20 +170,21 @@ form .input-field{
   width: 449px; 
   max-width: 100%; 
   align-items: center; 
-  /* gap: 15px;  */
   color: #777; 
-  cursor: pointer;
   padding: 9px 29px;
+  cursor: pointer;
 }
 .google-icon { 
   aspect-ratio: 1; 
   object-fit: contain; 
   object-position: center; 
-  width: 31px; 
-  
+  width: 31px;
 }
-.google-text { 
+.google-signup { 
   flex-grow: 1; 
   text-align: center;
   font-size: 30px;
-}
+  cursor: pointer; 
+  border: none; 
+  color: #777;
+} */

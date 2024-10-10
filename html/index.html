@@ -43,8 +43,21 @@
           </div>
 
           <div class="google-login" role="button" tabindex="0">
-            <img src="../images/google-logo.png" alt="Google logo" class="google-icon" />
-            <span class="google-text">Login with google</span>
+            <div id="g_id_onload"
+              data-context="signup"
+              data-client_id="11063273909-jbdea89ip5kqm5u2uo504p4dhtecaj1a.apps.googleusercontent.com"
+              data-callback="handleCredentialResponse"
+              data-ux_mode="popup"
+              data-auto_prompt="false">
+              <!-- <img src="../images/google-logo.png" alt="Google logo" class="google-icon" />
+            <button onclick="googlesignup()" type="submit" class="google-signup">Sign up with google</button> -->
+            <div class="g_id_signin" 
+              data-type="standard"
+              data-shape="rectangular"
+              data-theme="outline"
+              data-text="signin_with"
+              data-size="larger"
+              data-logo-alignment="center">
           </div>
         </form>
       </div>
@@ -81,7 +94,7 @@
       .then(result => {
         // Check if the login is successful
         if (result.status === 200) {
-          alert('Login successful!');
+          // alert('Login successful!');
           // Redirect to landpage.html
           window.location.href = 'landpage.html';
         } else {

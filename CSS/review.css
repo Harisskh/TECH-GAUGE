@@ -24,18 +24,18 @@
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    padding: 15px 15%;
+    padding: 10px 15%;
     transition: all 0.5s ease;
     background-color: #161d6f;
   }
   
   .logo img {
-    width: 70px;
+    width: 60px;
   }
   
   .user-icon {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
   }
   
   .navbar {
@@ -45,8 +45,8 @@
   .navbar a {
     color: #fff;
     font-family: "Inter", sans-serif;
-    font-size: 20px;
-    /* font-weight: 400; */
+    font-size: 17px;
+    font-weight: 700;
     line-height: 36px;
     align-items: center;
     text-align: center;
@@ -55,7 +55,8 @@
   }
   
   .navbar a:hover {
-    color: #b8b8b5;
+    text-transform: scale(1.2);
+    text-shadow: 0px 0px 2px #ffffff;;
     text-decoration: underline;
   }
   
@@ -78,7 +79,7 @@
   .rate-label {
     color: #000;
     text-align: center;
-    font: 600 23px Poppins, System-ui;
+    font: 600 20px Poppins, System-ui;
   }
   
   .star-rating {
@@ -88,6 +89,7 @@
     gap: 8px;
     justify-content: start;
     cursor: pointer;
+    text-shadow: 2px 5px 8px rgb(59, 56, 56, 0.5);
   }
   
   .star-rating i.fa-solid {
@@ -106,14 +108,14 @@
     align-self: stretch;
     margin: auto 0;
     color: #ffd700;
-    font-size: 25px;
+    font-size: 22px;
   }
   
   .review-label {
     color: #000;
     text-align: center;
-    margin-top: 60px;
-    font: 600 23px Poppins, System-ui;
+    margin-top: 50px;
+    font: 600 20px Poppins, System-ui;
   }
   
   @media (max-width: 991px) {
@@ -128,7 +130,7 @@
     margin-top: 32px;
     color: #333;
     text-align: start;
-    padding: 28px 41px 162px;
+    padding: 28px 41px 140px;
     font: 400 15px Poppins, sans-serif;
     outline: none;
     border: none;
@@ -151,9 +153,9 @@
     color: #fff;
     white-space: nowrap;
     text-align: center;
-    margin: 60px 0 0 40px;
+    margin: 50px 0 0 40px;
     padding: 8px 55px;
-    font: 700 23px Poppins, sans-serif;
+    font: 700 20px Poppins, sans-serif;
     border: none;
     cursor: pointer;
   }
@@ -182,7 +184,7 @@
     color: #fff;
     text-align: center;
     justify-content: center;
-    padding: 10px 70px 20px;
+    padding: 10px 70px;
   }
   
   @media (max-width: 991px) {
@@ -195,7 +197,7 @@
   
   .footer-content {
     display: flex;
-    width: 467px;
+    width: 420px;
     max-width: 100%;
     align-items: center;
     gap: 15px 20px;
@@ -204,7 +206,7 @@
   }
   
   .footer-title {
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 800;
     align-self: stretch;
     flex-grow: 1;
@@ -223,11 +225,11 @@
   }
   
   .footer-description {
-    font-size: 16px;
+    font-size: 15px;
     font-style: italic;
     font-weight: 500;
     align-self: stretch;
-    margin: auto 0;
+    margin: 0 auto;
     color: #fff;
     padding: 0px 50px;
   }
@@ -242,7 +244,7 @@
     aspect-ratio: 1;
     object-fit: contain;
     object-position: center;
-    width: 40px;
+    width: 35px;
     align-self: stretch;
     margin: auto 0;
   }
