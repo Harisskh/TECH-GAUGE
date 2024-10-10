@@ -6,9 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewTextarea = document.querySelector('.review-textarea');
     let currentRating = 0;
   
-    // Status user sign in (anggap false untuk awal)
+    // Status user sign in (diambil dari server)
     let isUserSignedIn = false;
-  
+
+    // Fetch sign-in status from the server
+    function checkSignInStatus() {
+        fetch('http://localhost/tech-gauge/register.php')  // Ganti dengan endpoint server-mu untuk cek login status
+            .then(response => response.json())
+            .then(data => {
+                if (data.isSignedIn) {
+                    isUserSignedIn = true;
+                } else {
+                    isUserSignedIn = false;
+                }
+                updateDropdown(); // Update dropdown berdasarkan status login
+            })
+            .catch(error => {
+                console.error('Error fetching sign-in status:', error);
+            });
+    }
+
     // Update dropdown based on sign in status
     function updateDropdown() {
         if (isUserSignedIn) {
@@ -34,14 +51,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle sign out
     document.addEventListener('click', function(event) {
         if (event.target.id === 'sign-out') {
-            isUserSignedIn = false; // Set sign out status
-            updateDropdown(); // Update dropdown menu
-            alert('You have signed out.');
+            fetch('/logout', { method: 'POST' })  // Ganti dengan endpoint server untuk logout
+                .then(response => {
+                    if (response.ok) {
+                        isUserSignedIn = false;
+                        updateDropdown(); // Update dropdown menu
+                        alert('You have signed out.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during sign-out:', error);
+                });
         }
     });
 
-    // Update dropdown on load
-    updateDropdown();
+    // Check sign-in status on page load
+    checkSignInStatus();
 
     // Function to update star classes (CSS) based on rating
     function updateStars(rating) {
@@ -101,16 +126,4 @@ document.addEventListener('DOMContentLoaded', function() {
   
         alert('Thank you for your review!');
     });
-  
-    // Dummy function to simulate user sign in
-    // Call this function somewhere in your sign in logic
-    function signInUser() {
-        isUserSignedIn = true;
-        updateDropdown(); // Update the dropdown to show sign out option
-        alert('You are now signed in.');
-    }
-
-    // Simulate user sign in for testing purposes (remove this in production)
-    // Uncomment the line below to simulate a user signing in
-    // signInUser();
 });
