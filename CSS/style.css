@@ -76,7 +76,7 @@ html, body{
   align-items: center; 
   color: #fff; 
   margin: 0 auto; 
-  padding: 15px 43px 65px; 
+  padding: 20px 43px 65px; 
   font: 400 35px Poppins, sans-serif;
 }
 .login-title { 
@@ -104,6 +104,7 @@ form .input-field{
   font-weight: 400;
   color: #333333;
   border-radius: 17px;
+  margin-top: 15px;
 }
 .input-field{
   text-align: center;
