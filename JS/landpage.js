@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', async function() {
     'ASUS ROG Zephyrus G14'
   ];
 
+  // Close dropdown search results when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('#search-results-1') && !event.target.closest('#laptop-search-1')) {
+      searchResults1.style.display = 'none';
+    }
+    if (!event.target.closest('#search-results-2') && !event.target.closest('#laptop-search-2')) {
+      searchResults2.style.display = 'none';
+    }
+  });
+
   // Laptop search functionality for search bar 1
   laptopSearch1.addEventListener('input', function() {
     const searchTerm = this.value.trim().toLowerCase();
@@ -80,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const filteredLaptops = laptops.filter(laptop =>
       laptop.toLowerCase().includes(searchTerm)
     );
-    if (filteredLaptops.length === 0 && searchTerm !== '') {
+    if (filteredLaptops.length === 0  && searchTerm !== '') {
       displayNoResults(searchResults2);
     } else {
       displaySearchResults(filteredLaptops, searchResults2, laptopSearch2);
