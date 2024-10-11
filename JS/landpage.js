@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', async function() {
   const laptopSearch2 = document.getElementById('laptop-search-2');
   const searchResults2 = document.getElementById('search-results-2');
   const compareBtn = document.getElementById('compare-btn');
+  
+  let selectedLaptops = [];
 
   // Fetch user login status from your database
   let userLoggedIn = false;
@@ -41,14 +43,23 @@ document.addEventListener('DOMContentLoaded', async function() {
       e.stopPropagation(); // Prevent closing dropdown
       dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('#user-icon') && !event.target.closest('.dropdown-menu')) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
   }
 
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('#user-icon') && !event.target.closest('.dropdown-menu')) {
-      dropdownMenu.style.display = 'none';
-    }
-  });
+  // Dummy data laptop
+  const laptops = [
+    'Dell XPS 13',
+    'MacBook Pro 16',
+    'Lenovo ThinkPad X1 Carbon',
+    'HP Spectre x360',
+    'ASUS ROG Zephyrus G14'
+  ];
 
   // Laptop search functionality for search bar 1
   laptopSearch1.addEventListener('input', function() {
@@ -92,6 +103,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     searchResultsElement.style.display = results.length > 0 ? 'block' : 'none';
   }
 
+  // Function for displaying "no results" message
   function displayNoResults(searchResultsElement) {
     searchResultsElement.innerHTML = '';
     const noResultsMessage = document.createElement('div');
