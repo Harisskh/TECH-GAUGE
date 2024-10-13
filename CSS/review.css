@@ -51,7 +51,7 @@
     z-index: 1000;
     border-radius: 10px;
   }
-  
+
   
   .dropdown-menu a {
     color: black;
@@ -279,6 +279,10 @@
     width: 35px;
     align-self: stretch;
     margin: auto 0;
+  }
+  .social-icon:hover{
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
   }
   
   .visually-hidden {
