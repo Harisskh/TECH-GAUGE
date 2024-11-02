@@ -203,14 +203,17 @@ header {
 }
 
 .dropdown-content {
-  margin-top: 150px;
-  margin-left: 220px;
+  margin-top: 5px;  
+  margin-left: 0;   
   border-radius: 10px;
-  position: relative;
+  position: absolute;
   background-color: #f9f9f9;
   min-width: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  left: 0;  
+  right: 0; 
+  top: 100%;
 }
 
 .dropdown-content a {
@@ -223,4 +226,184 @@ header {
 .dropdown-content a:hover {
   border-radius: 10px;
   background-color: #e2dfdf;
+}
+
+/* Responsive design untuk layar mobile */
+@media screen and (max-width: 768px) {
+  /* Header dan navigasi */
+  header {
+    padding: 10px 5%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo img {
+    width: 50px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar a {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  #user-icon {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  /* Main content area */
+  .main-container {
+    margin-top: 120px;
+    padding: 0 10px;
+  }
+
+  .content-area {
+    margin-top: 30px;
+  }
+
+  .main-title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    text-align: center;
+    margin: 5px 10px;
+  }
+
+  /* Search bars */
+  .search {
+    width: 90%;
+    max-width: none;
+    margin: 10px auto;
+    padding: 8px 15px;
+    height: 38px;
+    gap: 20px;
+  }
+
+  .search input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #search-icon {
+    font-size: 18px;
+  }
+
+  /* Dropdown content */
+  .dropdown-content {
+    min-width: 90%;
+    margin: 5px auto;
+    left: 5%;
+    right: 5%;
+  }
+
+  .dropdown-content a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* Compare button */
+  #compare-btn {
+    padding: 8px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 200px;
+  }
+
+  /* User dropdown menu */
+  .dropdown-menu {
+    top: 40px;
+    right: 10px;
+    min-width: 120px;
+  }
+
+  .dropdown-menu a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Untuk layar sangat kecil */
+@media screen and (max-width: 480px) {
+  .main-title {
+    font-size: 32px;
+  }
+  .main-container{
+    margin: 10px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .search {
+    height: 34px;
+    gap: 20px;
+  }
+
+  .search input {
+    font-size: 14px;
+  }
+}
+
+/* Memperbaiki tampilan landscape mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .main-container {
+    margin-top: 80px;
+  }
+
+  .content-area {
+    margin-top: 20px;
+  }
+
+  header {
+    padding: 5px 5%;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navbar a {
+    margin: 0 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-container {
+    margin-top: 50px;
+  }
+
+  .content-area {
+    margin-top: 20px;
+  }
+
+  header {
+    padding: 5px 5%;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navbar a {
+    margin: 0 15px;
+  }
 }

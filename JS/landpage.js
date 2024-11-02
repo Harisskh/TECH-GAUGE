@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   // Fetch user login status from your database
   let userLoggedIn = false;
   try {
-    const response = await fetch('http://localhost/tech-gauge/register.php'); // Sesuaikan dengan endpoint login milikmu
+    const response = await fetch('http://localhost/tech-gauge/register.php'); 
     const data = await response.json();
     userLoggedIn = data.loggedIn; // Contoh respons login
   } catch (error) {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Fungsi untuk menangani klik tombol sign out
     userIcon.addEventListener('click', async function() {
       try {
-        const response = await fetch('/api/logout', { method: 'POST' }); // Sesuaikan dengan endpoint logout milikmu
+        const response = await fetch('/api/logout', { method: 'POST' }); 
         if (response.ok) {
           alert('You have been signed out!');
           window.location.reload(); // Reload halaman setelah sign out
@@ -126,19 +126,25 @@ document.addEventListener('DOMContentLoaded', async function() {
   }
 
   // Function for selecting laptops
-  function selectLaptop(laptop, searchInputElement) {
-    if (selectedLaptops.length < 2 && !selectedLaptops.includes(laptop)) {
+function selectLaptop(laptop, searchInputElement) {
+  if (selectedLaptops.length < 2 && !selectedLaptops.includes(laptop)) {
       selectedLaptops.push(laptop);
-      searchInputElement.value = selectedLaptops.join(' vs '); // Display selected laptops
-    } else if (selectedLaptops.includes(laptop)) {
+      
+      if (searchInputElement === laptopSearch1) {
+          searchInputElement.value = selectedLaptops[0];  // Tampilkan laptop pertama
+      } else {
+          searchInputElement.value = selectedLaptops.length > 1 ? selectedLaptops[1] : '';  // Hanya tampilkan laptop kedua
+      }
+  } else if (selectedLaptops.includes(laptop)) {
       alert("This laptop has already been selected");
-    }
-    if (searchInputElement === laptopSearch1) {
-      searchResults1.style.display = 'none';
-    } else {
-      searchResults2.style.display = 'none';
-    }
   }
+  
+  if (searchInputElement === laptopSearch1) {
+      searchResults1.style.display = 'none';
+  } else {
+      searchResults2.style.display = 'none';
+  }
+}
 
   // Compare button functionality
   compareBtn.addEventListener('click', function() {
@@ -150,61 +156,3 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
   });
 });
-
-
-
-//edwin punya
-// Wait for DOM to load
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Dropdown functionality for user icon
-//     const userIcon = document.querySelector('.user-icon');
-//     const dropdownMenu = document.getElementById('dropdown');
-  
-//     userIcon.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-//     });
-  
-//     // Close dropdown when clicking outside
-//     document.addEventListener('click', function (e) {
-//       if (!userIcon.contains(e.target)) {
-//         dropdownMenu.style.display = 'none';
-//       }
-//     });
-  
-//     // Search suggestions functionality
-//     const searchInput = document.getElementById('search-input');
-//     const suggestionsBox = document.getElementById('suggestions');
-  
-//     const laptopSuggestions = ['MacBook Air', 'MacBook Pro', 'Dell XPS 13', 'HP Spectre x360', 'Lenovo ThinkPad X1'];
-  
-//     searchInput.addEventListener('input', function () {
-//       const query = searchInput.value.toLowerCase();
-//       suggestionsBox.innerHTML = ''; // Clear previous suggestions
-//       if (query) {
-//         const filteredSuggestions = laptopSuggestions.filter((item) =>
-//           item.toLowerCase().includes(query)
-//         );
-//         filteredSuggestions.forEach((suggestion) => {
-//           const suggestionDiv = document.createElement('div');
-//           suggestionDiv.textContent = suggestion;
-//           suggestionDiv.addEventListener('click', function () {
-//             searchInput.value = suggestion; // Set input to the selected suggestion
-//             suggestionsBox.innerHTML = ''; // Clear the suggestions
-//           });
-//           suggestionsBox.appendChild(suggestionDiv);
-//         });
-//         suggestionsBox.style.display = 'block';
-//       } else {
-//         suggestionsBox.style.display = 'none';
-//       }
-//     });
-  
-
-//     // Hide suggestions box when clicking outside
-//     document.addEventListener('click', function (e) {
-//       if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-//         suggestionsBox.style.display = 'none';
-//       }
-//     });
-// });

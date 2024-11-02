@@ -17,21 +17,20 @@
 <body>
   <section class="about-us">
     <header class="landing-page">
-      <!-- <div class="nav"> -->
-      <!-- <nav> -->
-      <a href="#" class="logo"><img src="/images/Logo LKKMO Web Teknologi 3.png" alt=""></a>
-
+      <a href="../html/landpage.html" class="logo"><img src="/images/Logo LKKMO Web Teknologi 3.png" alt=""></a>
+  
       <ul class="navbar">
-        <li><a href="/html/comparison.html">Comparison</a></li>
-        <li><a href="/html/brands.html">Brands</a></li>
-        <li><a href="/html/about-us.html">About Us</a></li>
+        <!-- <li><a href="comparison.html">Comparison</a></li> -->
+        <li><a href="../html/brands.html">Brands</a></li>
+        <li><a href="../html/about-us.html">About Us</a></li>
       </ul>
-
-      <div class="user-icon">
-        <a href="#" class="user-icon"><i class="fa-regular fa-circle-user custom-style"></i></a>
+  
+      <div id="user-icon">
+        <a href="#" id="user-icon"><i class="fa-regular fa-circle-user custom-style"></i></a>
+        <div class="dropdown-menu">
+          <a id="user-status" href="../html/index.html">Sign In</a>
+        </div>
       </div>
-      <!-- </nav> -->
-      <!-- </div> -->
     </header>
 
     <main class="main-content">
@@ -91,26 +90,82 @@
     <footer class="footer">
       <div class="footer-content">
         <h2 class="footer-title">Tech<span class="italic-text">Gauge</span></h2>
-        <p class="footer-description">we help you make informed decisions<br />when it comes to choosing the perfect
-          laptop</p>
-        <a href="https://www.instagram.com/" target="_blank"><img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e7a05f4435e5045f7544fb4bf5fcb80f42acdee8d06add607fdd24ebed259d4?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd"
-            alt="Social media icon" class="social-icon" /></a>
-        <a href="https://www.youtube.com/" target="_blank"><img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/89a0dd7bec7b7fc014a689cd0b26baa74e8dab4af262e8437b875bbc90859283?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd"
-            alt="Social media icon" class="social-icon" /></a>
-        <a href="https://wa.me/085691400178" target="_blank"><img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/376dbe77850c6ebc87eaf5439b82c895eecd6a3aea4cd238b1c74b2adb6f2f20?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd"
-            alt="Social media icon" class="social-icon" /></a>
-        <a href="https://www.facebook.com/" target="_blank"><img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/272f6b87dc1986b624aea8cd869d1f8918cf731fa244fdbd86e73f746c692785?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd"
-            alt="Social media icon" class="social-icon" /></a>
-        <a href="https://www.gmail.com/" target="_blank"><img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01eca8750a3076fe6c986c371b457dc882ad71ecf438b69d4c22dd9937d7f9af?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd"
-            alt="Social media icon" class="social-icon" /></a>
+        <p class="footer-description">we help you make informed decisions<br />when it comes to choosing the perfect laptop</p>
+        <a href="https://www.instagram.com/" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e7a05f4435e5045f7544fb4bf5fcb80f42acdee8d06add607fdd24ebed259d4?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd" alt="Social media icon" class="social-icon" /></a> 
+        <a href="https://www.youtube.com/" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/89a0dd7bec7b7fc014a689cd0b26baa74e8dab4af262e8437b875bbc90859283?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd" alt="Social media icon" class="social-icon" /></a>
+        <a href="https://wa.me/085691400178" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/376dbe77850c6ebc87eaf5439b82c895eecd6a3aea4cd238b1c74b2adb6f2f20?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd" alt="Social media icon" class="social-icon" /></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/272f6b87dc1986b624aea8cd869d1f8918cf731fa244fdbd86e73f746c692785?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd" alt="Social media icon" class="social-icon" /></a>
+        <a href="https://www.gmail.com/" target="_blank"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/01eca8750a3076fe6c986c371b457dc882ad71ecf438b69d4c22dd9937d7f9af?placeholderIfAbsent=true&apiKey=175d140b415840b0afd8ba9c5fcdc2dd" alt="Social media icon" class="social-icon" /></a>
       </div>
     </footer>
   </section>
+
+  <script>
+    
+document.addEventListener('DOMContentLoaded', function() {
+  const userIcon = document.getElementById('user-icon');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+
+  // Status user sign in (diambil dari server)
+  let isUserSignedIn = false;
+
+  // Fungsi untuk memeriksa status login dari server
+  function checkSignInStatus() {
+      fetch('http://localhost/tech-gauge/register.php')  // Ganti dengan endpoint server-mu untuk cek login status
+          .then(response => response.json())
+          .then(data => {
+              isUserSignedIn = data.isSignedIn;  // Menyimpan status login
+              updateDropdown(); // Update dropdown berdasarkan status login
+          })
+          .catch(error => {
+              console.error('Error fetching sign-in status:', error);
+          });
+  }
+
+  // Fungsi untuk memperbarui dropdown berdasarkan status sign in
+  function updateDropdown() {
+      if (isUserSignedIn) {
+          dropdownMenu.innerHTML = '<a href="#" id="sign-out">Sign Out</a>';
+      } else {
+          dropdownMenu.innerHTML = '<a href="sign-up.html">Sign In</a>';
+      }
+  }
+
+  // Tampilkan atau sembunyikan dropdown saat icon diklik
+  userIcon.addEventListener('click', function(e) {
+      e.stopPropagation(); // Mencegah dropdown menutup saat diklik
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Tutup dropdown saat mengklik di luar
+  document.addEventListener('click', function(event) {
+      if (!event.target.closest('#user-icon') && !event.target.closest('.dropdown-menu')) {
+          dropdownMenu.style.display = 'none';
+      }
+  });
+
+  // Tangani event sign-out
+  document.addEventListener('click', function(event) {
+      if (event.target.id === 'sign-out') {
+          fetch('/logout', { method: 'POST' })  // Ganti dengan endpoint server untuk logout
+              .then(response => {
+                  if (response.ok) {
+                      isUserSignedIn = false;
+                      updateDropdown(); // Perbarui menu dropdown
+                      alert('You have signed out.');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error during sign-out:', error);
+              });
+      }
+  });
+
+  // Panggil fungsi untuk cek status login saat halaman dimuat
+  checkSignInStatus();
+});
+
+  </script>
 </body>
 
 </html>
