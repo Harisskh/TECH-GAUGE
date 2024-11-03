@@ -150,7 +150,7 @@ function selectLaptop(laptop, searchInputElement) {
   compareBtn.addEventListener('click', function() {
     if (selectedLaptops.length === 2) {
       // Redirect to comparison page
-      window.location.href = `comparison.html?laptop1=${encodeURIComponent(selectedLaptops[0])}&laptop2=${encodeURIComponent(selectedLaptops[1])}`;
+      window.location.href = `../html/comparison.html?laptop1=${encodeURIComponent(selectedLaptops[0])}&laptop2=${encodeURIComponent(selectedLaptops[1])}`;
     } else {
       alert('Please select two laptops to compare.');
     }
